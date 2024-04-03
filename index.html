@@ -1,98 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marnie :3</title>
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="https://f-e-m-b-o-y.github.io/icon.png">
-<style>
-  body {
-    background-color: #e8a5bc; /* Background color */
-    margin: 0;
-    padding: 20px; /* Padding for the border around the edges of the site */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  .container h1 {
-    color: #313338; /* Text color */
-    margin: 10px 0; /* Reduced margin */
-    animation: slideInHeading 1.2s ease-out;
-  }
-  
-  .discord-logo {
-    width: 100px; /* Set the width of the image */
-    height: 100px; /* Set the height of the image */
-    border-radius: 50%; /* Make the image round */
-    border: 4px solid #b45796; /* Border color around the image */
-    margin-bottom: 10px; /* Reduced margin */
-    animation: slideInLogo 1s ease-out;
-  }
-  
-  .discord-btn {
-    background-color: #f4d9e3; /* Button color */
-    color: #313338; /* Text color */
-    padding: 10px 20px;
-    border: 2px solid #f4d9e3; /* Border color around the button */
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: background-color 0.3s ease-in-out;
-    animation: slideInButton 1.5s ease-out;
-  }
-  
-  .discord-btn:hover {
-    background-color: #f8dde6; /* Button hover color */
-  }
-  
-  @keyframes slideInHeading {
-    from {
-      opacity: 0;
-      transform: translateY(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes slideInLogo {
-    from {
-      opacity: 0;
-      transform: translateY(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes slideInButton {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push Notifications Example</title>
+    <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
 </head>
 <body>
-<div class="container">
-  <img src="https://cdn.discordapp.com/avatars/1154673873938288720/90f83bbfa8f72d0c24a1ee29c2a1feb8.png?size=1024" alt="Discord Logo" class="discord-logo">
-  <h1>Marnie</h1><br>
-  <a href="https://discord.com/invite/marnie" class="discord-btn" target="_blank" rel="noopener noreferrer">Join the Discord :3</a>
-</div>
+    <script>
+        const beamsClient = new PusherPushNotifications.Client({
+            instanceId: '7b6f6f5f-98e8-45bb-899f-45737ad71955',
+        });
+
+        beamsClient.start()
+            .then(() => beamsClient.addDeviceInterest('hello'))
+            .then(() => console.log('Successfully registered and subscribed!'))
+            .catch(console.error);
+    </script>
 </body>
 </html>
