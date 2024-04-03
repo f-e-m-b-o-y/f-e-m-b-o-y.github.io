@@ -7,15 +7,15 @@
     <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
 </head>
 <body>
-    <script>
-        const beamsClient = new PusherPushNotifications.Client({
-            instanceId: '7b6f6f5f-98e8-45bb-899f-45737ad71955',
-        });
+<script>
+  const beamsClient = new PusherPushNotifications.Client({
+    instanceId: '7b6f6f5f-98e8-45bb-899f-45737ad71955',
+  });
 
-        beamsClient.start()
-            .then(() => beamsClient.addDeviceInterest('hello'))
-            .then(() => console.log('Successfully registered and subscribed!'))
-            .catch(console.error);
-    </script>
+  beamsClient.start()
+    .then(() => beamsClient.addDeviceInterest('hello'))
+    .then(() => console.log('Successfully registered and subscribed!'))
+    .catch(console.error);
+</script>
 </body>
 </html>
